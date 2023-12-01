@@ -1,15 +1,89 @@
-body{
-    background-image: url("../assets/background-mobile.png");
-};
+/* ----------------------- */
+/*styles for mobile 320px */
+/* --------------------- */
 
+body{
+    background-image:url(../assets/background-mobile.png);
+}
+
+.profile-div h2{
+    margin-bottom: 0;
+    font-size: xx-large;
+}
+.profile-div h3{
+    margin-top: 0;
+}
+.profile-div h2,h3{
+    color: #EC879C;
+    font-family: 'Playfair Display', serif;
+}
+p{
+    font-family: 'Antic Slab', serif;
+
+}
+
+.container{
+    text-align: center;
+    width: 80%;
+    margin: 3em auto;
+}
+
+.profile-container{
+    margin-left: 2.5em;
+}
 .profile-pic {
-    width: 5em;
-    height: 5em;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    background-color: white;
+    padding: .2em;
+}
+.logo-img{
+    width: 3em;
+    height: 3em;
+    position: relative;
+    right: 2.5em;
 }
 
 svg{
-    width: 3em;
-    height: 3em;
+    height: 2em;
+    width: 2em;
 }
 
- 
+.background{
+    background-color: white;
+    width: 80%;
+    margin: 0 auto 1em;
+    border-radius: 10px;
+    padding:1em 0 ;
+    position: relative;
+}
+
+.floral-flex{
+    width: 90%;
+    margin: 5em auto;
+    text-align: center;
+}
+.floral-container img{
+    width: 8em;
+    height: 8em;
+}
+.flip-icon{
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    /* top: -10px; */
+    /* left: -5px; */
+    /* top: 0;  */
+    /* left: 0; */
+    /* right: 30px; */
+}
+
+.flip-icon svg{
+    background-color:#CA6D81;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 12px;
+    border-radius: 5px;
+    /* position:relative; */
+}
