@@ -50,34 +50,117 @@ svg{
     padding: .4em;
 }
 
-.background{
+.card{
     background-color: white;
-    width: 80%;
+    backface-visibility: hidden;
+    width: 90%;
     margin: 0 auto 1em;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px pink;
     padding:1em 0 ;
     position: relative;
+    transform-style: preserve-3d;
 }
-
-.floral-flex{
+.front-card{
     width: 90%;
     margin: 5em auto;
     text-align: center;
+    backface-visibility: hidden;
 }
 .floral-container img{
     width: 8em;
     height: 8em;
 }
-.flip-icon{
+.button-container{
     position: absolute;
     bottom: -15px;
     right: -10px;
 }
 
-.flip-icon svg{
+.button-container svg{
     background-color:#CA6D81;
     width: 1.2em;
     height: 1.2em;
     padding: 12px;
     border-radius: 5px;
+}
+
+/* back of card styles */
+.flip-back{
+    transform: rotateY(180deg);
+    transition: all 1s ease-in;
+}
+.flip-front{
+    transform: rotateY();
+    transition: all 1s ease-in;
+}
+
+.back-side{
+    transform: rotateY(180deg);
+    transition: transform 1s ease-out;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 5px pink;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+.socials-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+.qr-container{
+    margin: 3em auto;
+    border-radius: 5px;
+    background-color: #F3F3F3;
+    width: 70%;
+    padding: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.qr-container img {
+    width: 150px;
+    height: 150px;
+}
+.qr-container h4{
+    margin: 2em auto 0;
+}
+.email-content p{
+    margin-top: 0;
+}
+.qr-content p{
+    font-size: small;
+    margin-top: 0;
+}
+
+/* tablet view  */
+@media(min-width:768px){
+    body{
+        background-image: url(../assets/background-desktop.png);
+    }
+    .container,
+    .profile-div{
+        display: flex;
+    }
+    .container{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .profile-div{
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+    }
+    .front-card{
+        display: flex;
+    }
+    .floral-flex{
+        padding: 0 1em;
+    }
+
 }
