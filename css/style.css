@@ -1,14 +1,13 @@
 /* ----------------------- */
 /*styles for mobile 320px */
 /* --------------------- */
-
 body{
     background-image:url(../assets/background-mobile.png);
 }
 
 .profile-div h2{
     margin-bottom: 0;
-    font-size: xx-large;
+    /* font-size: xx-large; */
 }
 .profile-div h3{
     margin-top: 0;
@@ -23,7 +22,7 @@ p{
 
 .container{
     text-align: center;
-    width: 80%;
+    width: 82%;
     margin: 3em auto;
 }
 
@@ -56,20 +55,31 @@ svg{
     width: 90%;
     margin: 0 auto 1em;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px pink;
+    box-shadow: 0 0 5px hotpink;
     padding:1em 0 ;
     position: relative;
     transform-style: preserve-3d;
+
 }
 .front-card{
-    width: 90%;
-    margin: 5em auto;
-    text-align: center;
+    width: 65%;
+    margin: 1em auto;
     backface-visibility: hidden;
 }
+
+.floral-flex:hover{
+    background-color: #FFF9F3;
+}
+.floral-flex{
+    font-size: 16px;
+}
 .floral-container img{
-    width: 8em;
-    height: 8em;
+    width: 10em;
+    height: 10em;
+}
+.floral-container,
+.floral-flex h3     {
+    text-align: center;
 }
 .button-container{
     position: absolute;
@@ -91,10 +101,12 @@ svg{
     transition: all 1s ease-in;
 }
 .flip-front{
-    transform: rotateY();
+    /* transform: rotateY(0); */
     transition: all 1s ease-in;
 }
-
+.svg-hidden{
+    display: none;
+}
 .back-side{
     transform: rotateY(180deg);
     transition: transform 1s ease-out;
@@ -108,18 +120,27 @@ svg{
     top: 0;
     text-align: center;
 }
+.heading-container p {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.socials-container:hover{
+    background-color: #FFF9F3;
+}
 .socials-container{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 1em;
+    margin: 0 auto;
+    max-width: 250px;
 }
 
 .qr-container{
     margin: 3em auto;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px gray;
     background-color: #F3F3F3;
     width: 70%;
+    /* max-width: 300px; */
     padding: 1em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -137,30 +158,99 @@ svg{
     font-size: small;
     margin-top: 0;
 }
-
-/* tablet view  */
+/* ----------------------- */
+/*styles for mobile  425px */
+/* --------------------- */
+@media(min-width:425px){
+    .container,
+    .floral-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    text-align: initial;
+    }
+    .container h2{
+        margin-top: 0;
+    }
+    .svg-container{
+        font-size: x-small;
+    }
+    .floral-container{
+        padding-right: 2em;
+    }
+    .floral-container,
+    .floral-flex h3     {
+        text-align: initial;
+    }  
+    .qr-container{
+        display: flex;
+        align-items: center;
+        width: 80%;
+    }
+    .qr-container img {
+        height: 120px;
+        width: 120px;
+    }
+    .email-content{
+        padding: 1em;
+    }
+}
+/* ----------------------- */
+/*styles for tablet 768px */
+/* --------------------- */
 @media(min-width:768px){
     body{
         background-image: url(../assets/background-desktop.png);
     }
-    .container,
-    .profile-div{
-        display: flex;
-    }
-    .container{
-        width: 100%;
-        justify-content: space-evenly;
-    }
     .profile-div{
         align-items: center;
         justify-content: space-between;
-        width: 60%;
+    }
+    .front-card{
+        width: 90%;
+    }
+    .floral-flex{
+        padding: 0 1em;
+        font-size: medium;
+    }
+    .tablet-break{
+        width: 80%;
+        margin: auto;
+    }
+}
+/* ----------------------- */
+/*styles for desktop 1024px */
+/* --------------------- */
+@media(min-width:1024px){
+    main{
+        max-width: 1200px;
+        margin: auto;
+    }
+    .container{
+        justify-content: initial;
+    }
+    .profile-div{
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+    }
+    .svg-container{
+        font-size: initial;
     }
     .front-card{
         display: flex;
     }
     .floral-flex{
-        padding: 0 1em;
+        display: inline-block;
     }
-
+    .back-side{
+        display: flex;
+    }
+    .heading-container p{
+        display: none;
+    }
+    .qr-container{
+        margin: 3em;
+    }
 }
