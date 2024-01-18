@@ -4,10 +4,23 @@
 body{
     background-image:url(../assets/background-mobile.png);
 }
-
+main{ 
+    margin: 3em auto; 
+    perspective: 700px;
+    backface-visibility: hidden;
+}
+section{
+    transform-style: preserve-3d;
+}
+.profile-sec{
+    position: relative;
+    transform-style: preserve-3d;
+}
+.profile-div{
+    font-size: small;
+}
 .profile-div h2{
     margin-bottom: 0;
-    /* font-size: xx-large; */
 }
 .profile-div h3{
     margin-top: 0;
@@ -21,35 +34,45 @@ p{
 }
 
 .container{
-    text-align: center;
-    width: 82%;
-    margin: 3em auto;
+    display: flex;
+    justify-content:center;
+    margin-bottom: 2em;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
-.profile-container{
-    margin-left: 2.5em;
+.back-profile{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
+
 .profile-pic {
-    width: 8em;
-    height: 8em;
+    width: 6em;
+    height: 6em;
     border-radius: 50%;
     background-color: white;
     padding: .2em;
 }
 .logo-img{
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     position: relative;
     right: 2.5em;
 }
-
 svg{
-    height: 2em;
-    width: 2em;
-    padding: .4em;
+    height: 1.5em;
+    width: 1.5em;
+    padding: .2em;
 }
 
-.card{
+.info-sec{
     background-color: white;
     backface-visibility: hidden;
     width: 90%;
@@ -58,11 +81,17 @@ svg{
     box-shadow: 0 0 5px hotpink;
     padding:1em 0 ;
     position: relative;
-    transform-style: preserve-3d;
-
+    transform-style: preserve-3d;  
 }
+
+.card{
+    backface-visibility: hidden;
+    position: relative;
+    transform-style: preserve-3d;  
+}
+
 .front-card{
-    width: 65%;
+    width: 90%;
     margin: 1em auto;
     backface-visibility: hidden;
 }
@@ -71,7 +100,9 @@ svg{
     background-color: #FFF9F3;
 }
 .floral-flex{
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
 }
 .floral-container img{
     width: 10em;
@@ -98,11 +129,12 @@ svg{
 /* back of card styles */
 .flip-back{
     transform: rotateY(180deg);
-    transition: all 1s ease-in;
+    transition: transform 1s ease-in;
+    /* backface-visibility: hidden; */
 }
 .flip-front{
-    /* transform: rotateY(0); */
-    transition: all 1s ease-in;
+    transform: rotateY(0);
+    transition: transform 1s ease-in;
 }
 .svg-hidden{
     display: none;
@@ -140,7 +172,6 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     box-shadow: 0 0 5px gray;
     background-color: #F3F3F3;
     width: 70%;
-    /* max-width: 300px; */
     padding: 1em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -167,15 +198,13 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: x-small;
+    /* font-size: x-small; */
     text-align: initial;
     }
     .container h2{
         margin-top: 0;
     }
-    .svg-container{
-        font-size: x-small;
-    }
+    
     .floral-container{
         padding-right: 2em;
     }
@@ -195,6 +224,13 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     .email-content{
         padding: 1em;
     }
+    .profile-div{
+        font-size: initial;
+    }
+    .svg-container{
+        font: larger;
+    }
+
 }
 /* ----------------------- */
 /*styles for tablet 768px */
@@ -218,6 +254,10 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
         width: 80%;
         margin: auto;
     }
+    .container,
+    .svg-container{
+        font-size: x-large;
+    }
 }
 /* ----------------------- */
 /*styles for desktop 1024px */
@@ -225,18 +265,23 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
 @media(min-width:1024px){
     main{
         max-width: 1200px;
-        margin: auto;
+        border: solid 2px white;
+        box-shadow: 2px 2px 10px white;
+        border-radius: 10px;
+        padding: 1em 0 2em ;
     }
     .container{
-        justify-content: initial;
+        width: 80%;
+        margin: 2em auto;
     }
     .profile-div{
         display: flex;
         justify-content: space-between;
         width: 70%;
     }
-    .svg-container{
-        font-size: initial;
+    
+    .back-profile .profile-div{
+        width: initial;
     }
     .front-card{
         display: flex;
