@@ -274,7 +274,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
     .card{
         border: solid 2px white;
         box-shadow: 2px 2px 10px white;
-        border-radius: 10px; */
+        border-radius: 10px; 
     }
     .profile-div{
         display: flex;
