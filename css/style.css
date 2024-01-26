@@ -11,6 +11,7 @@ main{
 }
 section{
     transform-style: preserve-3d;
+    perspective: 700px; 
 }
 .profile-sec{
     position: relative;
@@ -74,7 +75,6 @@ svg{
 
 .info-sec{
     background-color: white;
-    backface-visibility: hidden;
     width: 90%;
     margin: 0 auto 1em;
     border-radius: 10px;
@@ -149,6 +149,7 @@ svg{
     left: 0;
     right: 0;
     top: 0;
+    bottom: 0;
     text-align: center;
 }
 .heading-container p {
